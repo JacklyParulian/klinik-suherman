@@ -66,6 +66,7 @@ class AmbulanceController extends Controller
     public function list()
     {
         $data = RiwayatTransaksAmbulance::with('pasien_ambulance','ambulance','lokasi')->where('status_pembayaran','pending')->orWhere('status_kejadian',Null)->where('status_pembayaran','pending')->get();
+        
         return view('backend.ambulance.list-ambulance',compact('data'));
 
     }

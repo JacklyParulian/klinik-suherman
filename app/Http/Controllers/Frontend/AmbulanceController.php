@@ -76,7 +76,7 @@ class AmbulanceController extends Controller
             $lokasi->alamat = $request->get('alamat');
             $lokasi->id_pasien_ambu = $pasien->id;
             $lokasi->save();
-
+            
             $ambulance = Ambulance::where('status_mobil','tersedia')->first()->id;
             $petugas = Petugas::first()->id;
             $transaksi = new RiwayatTransaksAmbulance;
